@@ -1,5 +1,10 @@
 import React from 'react';
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import rootReducer from './src/reducers';
 import { Welcome, Workout } from './src/containers'
+
+const store = createStore(rootReducer)
 
 export default class App extends React.Component {
   constructor() {
@@ -15,7 +20,9 @@ export default class App extends React.Component {
 
   renderRoot(ComponentToRender) {
     return (
-      <ComponentToRender onStartWorkout={this.startWorkout} />
+      <Provider store={store}>
+        <ComponentToRender onStartWorkout={this.startWorkout} />
+      </Provider>
     )
   }
 
