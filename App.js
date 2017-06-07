@@ -1,22 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Welcome } from './src/containers'
+import { Welcome, Workout } from './src/containers'
 
 export default class App extends React.Component {
-  render() {
+  constructor() {
+    super();
+    this.state = {
+      started: false
+    }
+  }
+
+  startWorkout = () => {
+    this.setState({ started: true })
+  }
+
+  renderRoot(ComponentToRender) {
     return (
-      <View style={styles.container}>
-        <Welcome />
-      </View>
-    );
+      <ComponentToRender onStartWorkout={this.startWorkout} />
+    )
+  }
+
+  render() {
+    return this.state.started ? this.renderRoot(Workout) : this.renderRoot(Welcome)
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
