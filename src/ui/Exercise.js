@@ -6,11 +6,33 @@ import {
 } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import Button from 'apsl-react-native-button'
+import moment from 'moment'
 import { CountDown } from './CountDown'
+import { PREPPING, DOING, RESTING } from '../constants'
+
+const getStatus = (pTime, aTime, rTime, secondsSinceStarted, removeExerciseStartTime) => {
+  if (secondsSinceStarted <= pTime) {
+    return PREPPING
+  } else if (secondsSinceStarted <= pTime + aTime) {
+    return DOING
+  } else if (secondsSinceStarted <= pTime + aTime + rTime) {
+    return RESTING
+  }
+  return undefined
+}
+
+const handleStartTimeWhenTimerFinishes = (exerciseId, startTime, status, removeExerciseStartTime) => {
+  if (startTime && !status) {
+    removeExerciseStartTime(exerciseId)
+  }
+}
 
 export const Exercise = (props) => {
   const e = props.exercise
-  const { setExerciseStartTime, exerciseId, currentDateTime } = props
+  const { setExerciseStartTime, removeExerciseStartTime, exerciseId, currentDateTime } = props
+  const secondsSinceStarted = moment(new Date(currentDateTime)).diff(moment(new Date(e.startTime)), 'seconds')
+  const status = getStatus(e.pTime, e.aTime, e.rTime, secondsSinceStarted, removeExerciseStartTime)
+  // handleStartTimeWhenTimerFinishes(exerciseId, e.startTime, status, removeExerciseStartTime)
   return (
     <LinearGradient
       colors={['#87FC70', '#0BD318']}
@@ -37,7 +59,8 @@ export const Exercise = (props) => {
       </View>
       <CountDown
         exercise={e}
-        currentDateTime={currentDateTime}
+        secondsSinceStarted={secondsSinceStarted}
+        status={status}
       />
       <View style={styles.footer}>
         <Button

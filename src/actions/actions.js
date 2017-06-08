@@ -5,6 +5,11 @@ export const setExerciseStartTime = (exerciseId) => ({
   exerciseId,
 })
 
+export const removeExerciseStartTime = (exerciseId) => ({
+  type: types.REMOVE_EXERCISE_START_TIME,
+  exerciseId,
+})
+
 export const setCurrentDateTime = () => ({
   type: types.SET_CURRENT_DATE_TIME,
 })

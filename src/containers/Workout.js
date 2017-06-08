@@ -7,7 +7,11 @@ import {
 } from 'react-native'
 import TabView from 'react-native-scrollable-tab-view'
 import { Exercise } from '../ui'
-import { setExerciseStartTime, setCurrentDateTime } from '../actions/actions'
+import {
+  setExerciseStartTime,
+  setCurrentDateTime,
+  removeExerciseStartTime
+} from '../actions/actions'
 
 class _Workout extends React.Component {
   constructor() {
@@ -41,6 +45,7 @@ class _Workout extends React.Component {
             exerciseId={index}
             currentDateTime={this.props.currentDateTime}
             setExerciseStartTime={this.props.setExerciseStartTime}
+            removeExerciseStartTime={this.props.removeExerciseStartTime}
           />
         ))}
       </TabView>
@@ -60,6 +65,9 @@ const mapActionsToProps = (dispatch) => ({
   setCurrentDateTime() {
     return dispatch(setCurrentDateTime())
   },
+  removeExerciseStartTime(exerciseId) {
+    return dispatch(removeExerciseStartTime(exerciseId))
+  }
 })
 
 const styles = StyleSheet.create({
