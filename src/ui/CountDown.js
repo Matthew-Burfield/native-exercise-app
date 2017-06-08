@@ -21,8 +21,20 @@ const getTimeRemaining = (exercise, secondsSinceStarted, status) => {
 export const CountDown = ({ exercise, secondsSinceStarted, status }) => {
   const timeRemaining = getTimeRemaining(exercise, secondsSinceStarted, status)
   return (
-    <View>
-      {exercise.startTime && <Text>{timeRemaining}</Text>}
+    <View style={styles.container}>
+      {exercise.startTime && <Text style={styles.countText}>{timeRemaining}</Text>}
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  countText: {
+    color: '#fff',
+    fontSize: 200,
+    fontWeight: 'bold',
+  }
+})

@@ -27,6 +27,17 @@ const handleStartTimeWhenTimerFinishes = (exerciseId, startTime, status, removeE
   }
 }
 
+const getGradient = (status) => {
+  switch (status) {
+    case PREPPING:
+      return ['#FF9500', '#FF5E3A']
+    case RESTING:
+      return ['#FF3B30', '#FF1300']
+    default:
+      return ['#87FC70', '#0BD318']
+  }
+}
+
 export const Exercise = (props) => {
   const e = props.exercise
   const { setExerciseStartTime, removeExerciseStartTime, exerciseId, currentDateTime } = props
@@ -35,7 +46,7 @@ export const Exercise = (props) => {
   // handleStartTimeWhenTimerFinishes(exerciseId, e.startTime, status, removeExerciseStartTime)
   return (
     <LinearGradient
-      colors={['#87FC70', '#0BD318']}
+      colors={getGradient(status)}
       style={styles.container}
     >
       <View style={styles.header}>
@@ -80,7 +91,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    flex: 0.3,
+    flex: 0.5,
     justifyContent: 'center',
   },
   headerText: {
@@ -89,16 +100,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   body: {
-    flex: 0.4,
+    flex: 0.1,
     flexDirection: 'row',
   },
   bodyLeft: {
     alignItems: 'flex-end',
-    flex: 0.5,
   },
   bodyRight: {
     alignItems: 'flex-start',
-    flex: 0.5,
   },
   bodyText: {
     fontSize: 25,
