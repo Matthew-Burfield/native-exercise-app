@@ -6,10 +6,11 @@ import {
 } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import Button from 'apsl-react-native-button'
+import { CountDown } from './CountDown'
 
 export const Exercise = (props) => {
   const e = props.exercise
-  const { setExerciseStartTime, exerciseId } = props
+  const { setExerciseStartTime, exerciseId, currentDateTime } = props
   return (
     <LinearGradient
       colors={['#87FC70', '#0BD318']}
@@ -34,6 +35,10 @@ export const Exercise = (props) => {
           {e.rTime && <Text style={styles.bodyText}> {e.rTime} min</Text>}
         </View>
       </View>
+      <CountDown
+        exercise={e}
+        currentDateTime={currentDateTime}
+      />
       <View style={styles.footer}>
         <Button
           style={styles.footerButton}

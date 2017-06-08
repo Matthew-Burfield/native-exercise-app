@@ -39,6 +39,7 @@ class _Workout extends React.Component {
             key={exercise.name}
             exercise={exercise}
             exerciseId={index}
+            currentDateTime={this.props.currentDateTime}
             setExerciseStartTime={this.props.setExerciseStartTime}
           />
         ))}
@@ -48,7 +49,8 @@ class _Workout extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  exercises: state.exercises
+  exercises: state.exercises,
+  currentDateTime: state.settings.currentDateTime,
 })
 
 const mapActionsToProps = (dispatch) => ({
