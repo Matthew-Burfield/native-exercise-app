@@ -5,36 +5,46 @@ import {
   StyleSheet
 } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
+import Button from 'apsl-react-native-button'
 
-export const Exercise = ({name, pTime, aTime, rTime, reps, sets}) => (
-  <LinearGradient
-    colors={['#87FC70', '#0BD318']}
-    style={styles.container}
-  >
-    <View style={styles.header}>
-      <Text style={styles.headerText}>{name}</Text>
-    </View>
-    <View style={styles.body}>
-      <View style={styles.bodyLeft}>
-        {reps && <Text style={styles.bodyText}>reps:</Text>}
-        {sets && <Text style={styles.bodyText}>sets:</Text>}
-        {pTime && <Text style={styles.bodyText}>prep-time:</Text>}
-        {aTime && <Text style={styles.bodyText}>action-time:</Text>}
-        {rTime && <Text style={styles.bodyText}>rest-time:</Text>}
+export const Exercise = (props) => {
+  const e = props.exercise
+  const { setExerciseStartTime, exerciseId } = props
+  return (
+    <LinearGradient
+      colors={['#87FC70', '#0BD318']}
+      style={styles.container}
+    >
+      <View style={styles.header}>
+        <Text style={styles.headerText}>{e.name}</Text>
       </View>
-      <View style={styles.bodyRight}>
-        {reps && <Text style={styles.bodyText}> {reps}</Text>}
-        {sets && <Text style={styles.bodyText}> {sets}</Text>}
-        {pTime && <Text style={styles.bodyText}> {pTime} sec</Text>}
-        {aTime && <Text style={styles.bodyText}> {aTime} sec</Text>}
-        {rTime && <Text style={styles.bodyText}> {rTime} min</Text>}
+      <View style={styles.body}>
+        <View style={styles.bodyLeft}>
+          {e.reps && <Text style={styles.bodyText}>reps:</Text>}
+          {e.sets && <Text style={styles.bodyText}>sets:</Text>}
+          {e.pTime && <Text style={styles.bodyText}>prep-time:</Text>}
+          {e.aTime && <Text style={styles.bodyText}>action-time:</Text>}
+          {e.rTime && <Text style={styles.bodyText}>rest-time:</Text>}
+        </View>
+        <View style={styles.bodyRight}>
+          {e.reps && <Text style={styles.bodyText}> {e.reps}</Text>}
+          {e.sets && <Text style={styles.bodyText}> {e.sets}</Text>}
+          {e.pTime && <Text style={styles.bodyText}> {e.pTime} sec</Text>}
+          {e.aTime && <Text style={styles.bodyText}> {e.aTime} sec</Text>}
+          {e.rTime && <Text style={styles.bodyText}> {e.rTime} min</Text>}
+        </View>
       </View>
-    </View>
-    <View style={styles.footer}>
-      <Text style={styles.bodyText}>Finish Set</Text>
-    </View>
-  </LinearGradient>
-)
+      <View style={styles.footer}>
+        <Button
+          style={styles.footerButton}
+          onPress={() => setExerciseStartTime(exerciseId)}
+        >
+          <Text style={styles.footerButtonText}>Finish Rep</Text>
+        </Button>
+      </View>
+    </LinearGradient>
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -68,5 +78,13 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 0.3,
+  },
+  footerButton: {
+    height: 100,
+    width: 400,
+  },
+  footerButtonText: {
+    color: '#fff',
+    fontSize: 40
   },
 })

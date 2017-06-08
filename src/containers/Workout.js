@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {
   View,
   Text,
@@ -6,18 +7,63 @@ import {
 } from 'react-native'
 import TabView from 'react-native-scrollable-tab-view'
 import { Exercise } from '../ui'
+import { setExerciseStartTime, setCurrentDateTime } from '../actions/actions'
 
-export const Workout = () => (
-  <TabView tabBarPosition='overlayTop'>
-    <Exercise tabLabel={'HS'} name={'Handstand'} pTime={10} aTime={30} rTime={60} />
-    <Exercise tabLabel={'RH'} name={'Ring hang'} pTime={10} aTime={60} rTime={60} />
-    <Exercise tabLabel ={'PU'} name={'Pullups'} reps={5} sets={5} />
-  </TabView>
-  
-)
+class _Workout extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      timer: undefined,
+    }
+  }
+  componentDidMount() {
+    const timer = setInterval(this.props.setCurrentDateTime, 1000)
+    this.setState({
+      timer,
+    })
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.timer)
+    this.setState({
+      timer: undefined,
+    })
+  }
+
+  render() {
+    return (
+      <TabView tabBarPosition='overlayTop'>
+        {this.props.exercises.map((exercise, index) => (
+          <Exercise
+            tabLabel={exercise.short}
+            key={exercise.name}
+            exercise={exercise}
+            exerciseId={index}
+            setExerciseStartTime={this.props.setExerciseStartTime}
+          />
+        ))}
+      </TabView>
+    )
+  }
+}
+
+const mapStateToProps = (state) => ({
+  exercises: state.exercises
+})
+
+const mapActionsToProps = (dispatch) => ({
+  setExerciseStartTime(exerciseId) {
+    return dispatch(setExerciseStartTime(exerciseId))
+  },
+  setCurrentDateTime() {
+    return dispatch(setCurrentDateTime())
+  },
+})
 
 const styles = StyleSheet.create({
   container: {
     flex: 1
   }
 })
+
+export const Workout = connect(mapStateToProps, mapActionsToProps)(_Workout)

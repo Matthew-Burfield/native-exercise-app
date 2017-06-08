@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "apsl-react-native-button": "^3.0.2",
+    "moment": "^2.18.1",
     "react": "16.0.0-alpha.6",
     "react-native": "^0.44.0",
     "react-native-linear-gradient": "^2.0.0",
