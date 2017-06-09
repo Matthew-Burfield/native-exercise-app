@@ -55,15 +55,15 @@ export const Exercise = (props) => {
       </View>
       <View style={styles.body}>
         <View style={styles.bodyLeft}>
-          {e.reps && <Text style={styles.bodyText}>reps:</Text>}
-          {e.sets && <Text style={styles.bodyText}>sets:</Text>}
+          {e.reqReps && <Text style={styles.bodyText}>reps:</Text>}
+          {e.reqSets && <Text style={styles.bodyText}>sets:</Text>}
           {e.pTime && <Text style={styles.bodyText}>prep-time:</Text>}
           {e.aTime && <Text style={styles.bodyText}>action-time:</Text>}
           {e.rTime && <Text style={styles.bodyText}>rest-time:</Text>}
         </View>
         <View style={styles.bodyRight}>
-          {e.reps && <Text style={styles.bodyText}> {e.reps}</Text>}
-          {e.sets && <Text style={styles.bodyText}> {e.sets}</Text>}
+          {e.reqReps && <Text style={styles.bodyText}> {e.reqReps}</Text>}
+          {e.reqSets && <Text style={styles.bodyText}> {e.completedSets}/{e.reqSets}</Text>}
           {e.pTime && <Text style={styles.bodyText}> {e.pTime} sec</Text>}
           {e.aTime && <Text style={styles.bodyText}> {e.aTime} sec</Text>}
           {e.rTime && <Text style={styles.bodyText}> {e.rTime} min</Text>}
