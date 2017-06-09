@@ -29,10 +29,11 @@ const handleStartTimeWhenTimerFinishes = (exerciseId, startTime, status, removeE
 
 const getGradient = (status) => {
   switch (status) {
-    case PREPPING:
+    case DOING:
       return ['#FF9500', '#FF5E3A']
     case RESTING:
       return ['#FF3B30', '#FF1300']
+    case PREPPING:
     default:
       return ['#87FC70', '#0BD318']
   }
