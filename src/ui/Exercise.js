@@ -106,9 +106,11 @@ const styles = StyleSheet.create({
   },
   bodyLeft: {
     alignItems: 'flex-end',
+    flex: 1,
   },
   bodyRight: {
     alignItems: 'flex-start',
+    flex: 1,
   },
   bodyText: {
     fontSize: 25,

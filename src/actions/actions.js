@@ -14,6 +14,10 @@ export const setCurrentDateTime = () => ({
   type: types.SET_CURRENT_DATE_TIME,
 })
 
+export const completeSet = (exerciseId) => ({
+  type: types.COMPLETE_SET,
+})
+
 // export const finishExerciseRep = (exerciseId) => ({
 //   type: types.FINISH_REP,
 //   exerciseId,

@@ -19,6 +19,13 @@ export const exercises = (state = initState, action) => {
         ...state.slice(action.exerciseId + 1)
       ]
 
+    case types.COMPLETE_SET:
+      return [
+        ...state.slice(0, action.exerciseId),
+        Object.assign({}, state[action.exerciseId], { completedSets: state.exercise[action.exerciseId].completedSets + 1}),
+        ...state.slice(action.exerciseId + 1)
+      ]
+
     case types.FINISH_REP:
       return state
     default:
