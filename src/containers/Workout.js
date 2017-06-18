@@ -10,7 +10,8 @@ import { Exercise } from '../ui'
 import {
   setExerciseStartTime,
   setCurrentDateTime,
-  removeExerciseStartTime
+  removeExerciseStartTime,
+  increaseCompletedSets,
 } from '../actions/actions'
 
 class _Workout extends React.Component {
@@ -46,6 +47,7 @@ class _Workout extends React.Component {
             currentDateTime={this.props.currentDateTime}
             setExerciseStartTime={this.props.setExerciseStartTime}
             removeExerciseStartTime={this.props.removeExerciseStartTime}
+            increaseCompletedSets={this.props.increaseCompletedSets}
           />
         ))}
       </TabView>
@@ -67,6 +69,9 @@ const mapActionsToProps = (dispatch) => ({
   },
   removeExerciseStartTime(exerciseId) {
     return dispatch(removeExerciseStartTime(exerciseId))
+  },
+  increaseCompletedSets(exerciseId) {
+    return dispatch(increaseCompletedSets(exerciseId))
   }
 })
 

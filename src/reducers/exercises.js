@@ -19,10 +19,17 @@ export const exercises = (state = initState, action) => {
         ...state.slice(action.exerciseId + 1)
       ]
 
-    case types.COMPLETE_SET:
+    case types.INCREASE_SET:
       return [
         ...state.slice(0, action.exerciseId),
-        Object.assign({}, state[action.exerciseId], { completedSets: state.exercise[action.exerciseId].completedSets + 1}),
+        Object.assign({}, state[action.exerciseId], { completedSets: state[action.exerciseId].completedSets + 1 }),
+        ...state.slice(action.exerciseId + 1)
+      ]
+
+    case types.DECREASE_SET:
+      return [
+        ...state.slice(0, action.exerciseId),
+        Object.assign({}, state[action.exerciseId], { completedSets: state[action.exerciseId].completedSets - 1 }),
         ...state.slice(action.exerciseId + 1)
       ]
 

@@ -39,9 +39,19 @@ const getGradient = (status) => {
   }
 }
 
+const handleButtonPress = (exerciseId, setExerciseStartTime, increaseCompletedSets) => {
+  setExerciseStartTime(exerciseId)
+  increaseCompletedSets(exerciseId)
+}
+
 export const Exercise = (props) => {
   const e = props.exercise
-  const { setExerciseStartTime, removeExerciseStartTime, exerciseId, currentDateTime } = props
+  const { setExerciseStartTime,
+    removeExerciseStartTime,
+    increaseCompletedSets,
+    exerciseId,
+    currentDateTime
+  } = props
   const secondsSinceStarted = moment(new Date(currentDateTime)).diff(moment(new Date(e.startTime)), 'seconds')
   const status = getStatus(e.pTime, e.aTime, e.rTime, secondsSinceStarted, removeExerciseStartTime)
   // handleStartTimeWhenTimerFinishes(exerciseId, e.startTime, status, removeExerciseStartTime)
@@ -77,7 +87,7 @@ export const Exercise = (props) => {
       <View style={styles.footer}>
         <Button
           style={styles.footerButton}
-          onPress={() => setExerciseStartTime(exerciseId)}
+          onPress={() => handleButtonPress(exerciseId, setExerciseStartTime, increaseCompletedSets)}
         >
           <Text style={styles.footerButtonText}>Finish Rep</Text>
         </Button>
