@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/res/merged/debug/raw/countdownfinalbeep.wav",
+        "source": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/src/main/res/raw/countdownfinalbeep.wav"
+    },
+    {
+        "merged": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/res/merged/debug/raw/countdownbeep.wav",
+        "source": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/src/main/res/raw/countdownbeep.wav"
+    }
+]

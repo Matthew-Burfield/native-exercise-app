@@ -26,6 +26,7 @@ MERGED from [com.facebook.react:react-native:0.44.3] /Users/matthewburfield/Deve
 		ADDED from /Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/src/main/AndroidManifest.xml:7:22-75
 uses-sdk
 ADDED from /Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/src/main/AndroidManifest.xml:9:5-11:41
+MERGED from [nativeexerciseapp:react-native-sound:unspecified] /Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/exploded-aar/nativeexerciseapp/react-native-sound/unspecified/AndroidManifest.xml:9:5-11:41
 MERGED from [nativeexerciseapp:react-native-linear-gradient:unspecified] /Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/exploded-aar/nativeexerciseapp/react-native-linear-gradient/unspecified/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.44.3] /Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.44.3/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:20:5-43

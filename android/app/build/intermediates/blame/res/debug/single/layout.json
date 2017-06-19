@@ -1,15 +1,15 @@
 [
     {
-        "merged": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
-        "source": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/abc_action_bar_up_container.xml"
+        "merged": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
+        "source": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/notification_template_big_media.xml"
     },
     {
         "merged": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
         "source": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/abc_alert_dialog_material.xml"
     },
     {
-        "merged": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
-        "source": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/notification_template_big_media.xml"
+        "merged": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/layout/abc_action_bar_up_container.xml"
     },
     {
         "merged": "/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",

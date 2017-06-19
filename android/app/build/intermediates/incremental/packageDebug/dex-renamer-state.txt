@@ -1,4 +1,4 @@
-#Wed Jun 07 19:46:40 AEST 2017
+#Mon Jun 19 12:18:27 AEST 2017
 base.0=/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/Users/matthewburfield/Development/MyProjects/native-exercise-app/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
